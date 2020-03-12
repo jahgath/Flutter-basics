@@ -13,18 +13,25 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[800],
       ),
-      body: Center(
-        child: Text(
-          'hello ninjas',
-          style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              color: Colors.grey,
-              fontFamily: 'Bellota'
-          ),
-        ),
+      body: Stack(
+        children: <Widget>[
+          Image.asset('assets/sky1.jfif'),
+          Center(
+            child: Text(
+              'hello world',
+              style: TextStyle(
+                fontSize: 50,
+                fontFamily: 'Bellota',
+                color: Colors.white,
+                letterSpacing: 2.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          )
+
+        ],
       ),
+
       floatingActionButton: FloatingActionButton(
         child: Text('Meh'),
         onPressed: (){},
@@ -33,4 +40,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
