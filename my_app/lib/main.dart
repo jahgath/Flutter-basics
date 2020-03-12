@@ -15,8 +15,28 @@ class Home extends StatelessWidget {
       ),
       body: Stack(
         children: <Widget>[
-          Image.asset('assets/sky1.jfif'),
+          Align(
+            child: Image.asset('assets/sky1.jfif'),
+          ),
+          Align(
+            child:Icon(
+                Icons.airport_shuttle,
+                color: Colors.black,
+                size: 50,
+            ),
+          ),
+
           Center(
+            child: IconButton(
+              onPressed: (){print('you clicked');},
+              color: Colors.red,
+              icon: Icon(Icons.mail,),
+
+            )
+          ),
+
+          Align(
+            alignment: Alignment.topCenter,
             child: Text(
               'hello world',
               style: TextStyle(
