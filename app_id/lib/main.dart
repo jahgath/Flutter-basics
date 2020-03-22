@@ -4,7 +4,15 @@ void main() => runApp(MaterialApp(
   home: AppCard() ,
 ));
 
-class AppCard extends StatelessWidget {
+class AppCard extends StatefulWidget {
+  @override
+  _AppCardState createState() => _AppCardState();
+}
+
+class _AppCardState extends State<AppCard> {
+
+  int ninjaLevel = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +22,15 @@ class AppCard extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         backgroundColor: Colors.grey[850],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            ninjaLevel++;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[800],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
@@ -59,7 +76,7 @@ class AppCard extends StatelessWidget {
               ),
             ),
             Text(
-              'Chun-Li',
+              '$ninjaLevel',
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
@@ -94,14 +111,3 @@ class AppCard extends StatelessWidget {
   }
 }
 
-class Test extends StatefulWidget {
-  @override
-  _TestState createState() => _TestState();
-}
-
-class _TestState extends State<Test> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
